@@ -10,15 +10,18 @@ import json
 from packaging.version import Version
 
 # Supported Python versions for pycuda.
-PYTHON_VERSIONS = ["3.9", "3.10", "3.11", "3.12", "3.13"]
+# TODO: Expand to ["3.9", "3.10", "3.11", "3.12", "3.13"] after testing.
+PYTHON_VERSIONS = ["3.12"]
 
 # CUDA versions to build against.
-CUDA_VERSIONS = ["12.1", "12.4", "12.6", "12.8"]
+# TODO: Expand to ["12.1", "12.4", "12.6", "12.8"] after testing.
+CUDA_VERSIONS = ["12.6"]
 
 # Architecture to CUDA version mapping.
+# TODO: Expand after testing.
 ARCH_CUDA_PAIRS = {
-    "x86_64": ["12.1", "12.4", "12.6", "12.8"],
-    "aarch64": ["12.6", "12.8"],
+    "x86_64": ["12.6"],
+    # "aarch64": ["12.6", "12.8"],
 }
 
 # The glibc version to use for manylinux builds.
