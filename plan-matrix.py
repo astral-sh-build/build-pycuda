@@ -10,15 +10,15 @@ import json
 from packaging.version import Version
 
 # Supported Python versions for pycuda.
-PYTHON_VERSIONS = ["3.9", "3.10", "3.11", "3.12", "3.13"]
+PYTHON_VERSIONS = ["3.9", "3.10", "3.11", "3.12", "3.13", "3.14"]
 
 # CUDA versions to build against.
-CUDA_VERSIONS = ["12.1", "12.4", "12.6", "12.8"]
+CUDA_VERSIONS = ["12.4", "12.6", "12.8", "13.0"]
 
 # Architecture to CUDA version mapping.
 ARCH_CUDA_PAIRS = {
-    "x86_64": ["12.1", "12.4", "12.6", "12.8"],
-    "aarch64": ["12.6", "12.8"],
+    "x86_64": ["12.4", "12.6", "12.8", "13.0"],
+    "aarch64": ["12.6", "12.8", "13.0"],
 }
 
 # The glibc version to use for manylinux builds.
@@ -33,6 +33,10 @@ AUDITWHEEL_CUDA_VERSION_EXCLUDES = {
     "12": [
         "libcudart.so.12",
         "libcudart.so.12.0",
+    ],
+    "13": [
+        "libcudart.so.13",
+        "libcudart.so.13.0",
     ],
 }
 
