@@ -13,12 +13,12 @@ from packaging.version import Version
 PYTHON_VERSIONS = ["3.9", "3.10", "3.11", "3.12", "3.13", "3.14"]
 
 # CUDA versions to build against.
-CUDA_VERSIONS = ["12.4", "12.6", "12.8", "13.0"]
+CUDA_VERSIONS = ["12.4", "12.6", "12.8", "12.9", "13.0"]
 
 # Architecture to CUDA version mapping.
 ARCH_CUDA_PAIRS = {
-    "x86_64": ["12.4", "12.6", "12.8", "13.0"],
-    "aarch64": ["12.6", "12.8", "13.0"],
+    "x86_64": ["12.4", "12.6", "12.8", "12.9", "13.0"],
+    "aarch64": ["12.6", "12.8", "12.9", "13.0"],
 }
 
 # The glibc version to use for manylinux builds.
