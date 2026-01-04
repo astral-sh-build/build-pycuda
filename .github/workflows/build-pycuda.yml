@@ -76,7 +76,7 @@ jobs:
           echo "Using PyCUDA version: ${PYCUDA_VERSION}"
         env:
           GITHUB_EVENT_NAME: ${{ github.event_name }}
-          GITHUB_REF_NAME: ${{ github.ref_name }}
+          GITHUB_REF_NAME: ${{ github.event.release.tag_name }}
           INPUTS_PYCUDA_VERSION: ${{ inputs.PYCUDA_VERSION }}
 
       - name: Checkout PyCUDA
