@@ -10,7 +10,7 @@ on:
       PYCUDA_VERSION:
         description: "PyCUDA version"
         required: true
-        default: "v2025.1.2"
+        default: "v2026.1"
         type: string
   release:
     types: [created]
@@ -70,7 +70,7 @@ jobs:
           elif [ "${GITHUB_EVENT_NAME}" = "workflow_dispatch" ]; then
             PYCUDA_VERSION="${INPUTS_PYCUDA_VERSION}"
           else
-            PYCUDA_VERSION="v2025.1.2"
+            PYCUDA_VERSION="v2026.1"
           fi
           echo "version=${PYCUDA_VERSION}" >> $GITHUB_OUTPUT
           echo "Using PyCUDA version: ${PYCUDA_VERSION}"

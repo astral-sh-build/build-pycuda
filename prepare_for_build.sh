@@ -2,7 +2,7 @@
 # Script to prepare the build environment for PyCUDA.
 #
 # Example usage:
-#   ./prepare_for_build.sh v2025.1.2
+#   ./prepare_for_build.sh v2026.1
 
 set -euxo pipefail
 
@@ -10,7 +10,7 @@ export ROOT=`pwd`
 
 if [ $# -ne 1 ]; then
     echo "Usage: $0 <pycuda_version>"
-    echo "Example: $0 v2025.1.2"
+    echo "Example: $0 v2026.1"
     exit 1
 fi
 
