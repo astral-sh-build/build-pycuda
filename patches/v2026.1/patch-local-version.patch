@@ -1,17 +1,18 @@
 diff --git a/setup.py b/setup.py
-index 1234567..abcdefg 100644
+index a15ef2b..809ccdb 100644
 --- a/setup.py
 +++ b/setup.py
-@@ -9,6 +9,12 @@ exec(
-     ver_dic,
- )
-
-+# Auto-generate local version from CUDA and PyTorch versions.
-+import torch
-+cuda_version = torch.version.cuda
-+torch_version = ".".join(torch.__version__.split(".")[:2])
-+if cuda_version:
-+    ver_dic["VERSION_TEXT"] = f"{ver_dic['VERSION_TEXT']}+cu.{cuda_version}.torch.{torch_version}"
-
- setup(
-     name="pycuda",
+@@ -177,6 +177,13 @@ def main():
+         ver_dic,
+     )
+ 
++    # Auto-generate local version from CUDA and PyTorch versions.
++    import torch
++    cuda_version = torch.version.cuda
++    torch_version = ".".join(torch.__version__.split(".")[:2])
++    if cuda_version:
++        ver_dic["VERSION_TEXT"] = f"{ver_dic['VERSION_TEXT']}+cu.{cuda_version}.torch.{torch_version}"
++
+     import sys
+ 
+     setup(
