@@ -136,7 +136,7 @@ jobs:
           CIBW_BEFORE_ALL: >
             curl -LsSf https://astral.sh/uv/install.sh | sh
           CIBW_BEFORE_BUILD_LINUX: >
-            uv pip install setuptools wheel numpy mako pytools &&
+            uv pip install setuptools wheel "numpy>=1.24,<2.3" mako pytools &&
             bash build_scripts/prepare_for_build.sh ${{ steps.pycuda-version.outputs.version }}
           CIBW_ENVIRONMENT: >
             PATH=$PATH:/root/.local/bin
