@@ -96,7 +96,7 @@ def get_wheel_name(cuda_version: str, python_version: str) -> str:
         manylinux_tag = "manylinux_2_24_x86_64.manylinux_2_28_x86_64"
     else:
         manylinux_tag = "manylinux_2_27_x86_64.manylinux_2_28_x86_64"
-    return f"pycuda-2026.1+cu{cuda_version}-cp{py_ver}-cp{py_ver}-{manylinux_tag}.whl"
+    return f"pycuda-2026.1+cu.{cuda_version}-cp{py_ver}-cp{py_ver}-{manylinux_tag}.whl"
 
 
 def get_cuda_image_tag(cuda_version: str) -> str:

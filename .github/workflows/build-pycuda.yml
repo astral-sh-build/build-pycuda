@@ -147,6 +147,7 @@ jobs:
             LDFLAGS="-ldl -L/usr/local/cuda-${{ env.MANYLINUX_CUDA_VERSION }}/targets/${{ matrix.target-arch }}-linux/lib/stubs"
             AUDITWHEEL_PLAT="manylinux_${{ env.MANYLINUX_GLIBC_VERSION }}_$(uname -m)"
             MATRIX_CUDA_VERSION=${{ env.MATRIX_CUDA_VERSION }}
+            MANYLINUX_CUDA_VERSION=${{ env.MANYLINUX_CUDA_VERSION }}
             MATRIX_PYTHON_VERSION=${{ env.MATRIX_PYTHON_VERSION }}
             MAX_JOBS=8
             UV_PYTHON=/opt/python/cp${{ env.MATRIX_PYTHON_VERSION }}-cp${{ env.MATRIX_PYTHON_VERSION }}/bin/python
