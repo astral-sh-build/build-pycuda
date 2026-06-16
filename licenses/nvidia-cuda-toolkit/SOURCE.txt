@@ -1,0 +1,14 @@
+LicenseRef: LicenseRef-NVIDIA-CUDA-Toolkit
+Component: NVIDIA CUDA Toolkit redistributable libraries
+Source: https://docs.nvidia.com/cuda/eula/
+Last observed upstream update: January 26, 2026
+
+PyCUDA builds optional cuRAND bindings when CUDA provides cuRAND headers and
+libraries. The Linux wheel repair step excludes libcuda and libcudart, but does
+not exclude libcurand; if auditwheel vendors libcurand into the wheel, that
+library is governed by the NVIDIA CUDA Toolkit license terms.
+
+The bundled EULA.html file is a managed copy of NVIDIA's CUDA Toolkit End User
+License Agreement page. Its Attachment A lists the CUDA Random Number
+Generation Library, including libcurand.so, as a CUDA Toolkit redistributable
+library for Linux.
