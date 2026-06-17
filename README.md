@@ -8,11 +8,11 @@ CPU architectures.
 Artifacts are published to a separate index for each CUDA version. Each wheel has a local version
 suffix that identifies the CUDA version it was built against, such as `pycuda==2026.1+cu12.8`.
 
-Pre-built wheels are available on [Astral's GPU indexes](https://pub-ca5ccdc72d7a4f9e9f2af5929bdf5083.r2.dev/index.html).
+Pre-built wheels are available on [Astral's GPU indexes](https://wheels.astralshosted.com/index.html).
 For example, to install a CUDA 12.8 build:
 
 ```console
-$ uv add pycuda --index astral-cu128=https://pub-ca5ccdc72d7a4f9e9f2af5929bdf5083.r2.dev/simple/cu128/
+$ uv add pycuda --index astral-cu128=https://wheels.astralshosted.com/simple/cu128/
 ```
 
 This configures the index and uses it as the source for `pycuda`:
@@ -23,13 +23,13 @@ pycuda = { index = "astral-cu128" }
 
 [[tool.uv.index]]
 name = "astral-cu128"
-url = "https://pub-ca5ccdc72d7a4f9e9f2af5929bdf5083.r2.dev/simple/cu128/"
+url = "https://wheels.astralshosted.com/simple/cu128/"
 ```
 
 Or, with `uv pip`:
 
 ```console
-$ uv pip install --index https://pub-ca5ccdc72d7a4f9e9f2af5929bdf5083.r2.dev/simple/cu128/ pycuda
+$ uv pip install --index https://wheels.astralshosted.com/simple/cu128/ pycuda
 ```
 
 ## Supported versions
