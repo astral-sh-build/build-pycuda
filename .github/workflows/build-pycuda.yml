@@ -67,7 +67,7 @@ jobs:
           if [ "${GITHUB_EVENT_NAME}" = "workflow_dispatch" ]; then
             TAG="${INPUTS_RELEASE_TAG}"
             # Remove -rN suffix if present
-            PYCUDA_VERSION=$(printf '%s\\n' "${TAG}" | sed -E 's/-r[0-9]+$//')
+            PYCUDA_VERSION=$(sed -E 's/-r[0-9]+$//' <<<"${TAG}")
           else
             PYCUDA_VERSION="v2026.1"
           fi
