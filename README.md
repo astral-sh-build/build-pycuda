@@ -42,9 +42,9 @@ Wheels are available for the following `pycuda` versions:
 
 The latest upstream release, PyCUDA 2026.1, supports the following combinations:
 
-| Python   | `x86_64` CUDA                | `aarch64` CUDA         |
-| -------- | ---------------------------- | ---------------------- |
-| 3.9-3.14 | 12.4, 12.6, 12.8, 12.9, 13.0 | 12.6, 12.8, 12.9, 13.0 |
+| Python   | `x86_64` CUDA                      | `aarch64` CUDA               |
+| -------- | ---------------------------------- | ---------------------------- |
+| 3.9-3.14 | 12.4, 12.6, 12.8, 12.9, 13.0, 13.2 | 12.6, 12.8, 12.9, 13.0, 13.2 |
 
 ## License
 

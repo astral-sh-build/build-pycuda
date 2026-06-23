@@ -14,12 +14,12 @@ from packaging.version import Version
 PYTHON_VERSIONS = ["3.9", "3.10", "3.11", "3.12", "3.13", "3.14"]
 
 # CUDA versions to build against.
-CUDA_VERSIONS = ["12.4", "12.6", "12.8", "12.9", "13.0"]
+CUDA_VERSIONS = ["12.4", "12.6", "12.8", "12.9", "13.0", "13.2"]
 
 # Architecture to CUDA version mapping.
 ARCH_CUDA_PAIRS = {
-    "x86_64": ["12.4", "12.6", "12.8", "12.9", "13.0"],
-    "aarch64": ["12.6", "12.8", "12.9", "13.0"],
+    "x86_64": ["12.4", "12.6", "12.8", "12.9", "13.0", "13.2"],
+    "aarch64": ["12.6", "12.8", "12.9", "13.0", "13.2"],
 }
 
 # The glibc version to use for manylinux builds.
@@ -100,7 +100,7 @@ def main() -> None:
 
     # For PR builds, limit matrix to a single entry for faster CI.
     if os.environ.get("LIMIT_MATRIX") == "1":
-        rows = rows[:1]
+        rows = rows[-1:]
     print(json.dumps(rows))
 
 
