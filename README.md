@@ -6,7 +6,7 @@ CPU architectures.
 ## Installation
 
 Artifacts are published to a separate index for each CUDA version. Each wheel has a local version
-suffix that identifies the CUDA version it was built against, such as `pycuda==2026.1+cu12.8`.
+suffix that identifies the CUDA version it was built against, such as `pycuda==2026.1+cu.12.8`.
 
 Pre-built wheels are available on [Astral's GPU indexes](https://wheels.astral.sh/index.html).
 For example, to install a CUDA 12.8 build:
