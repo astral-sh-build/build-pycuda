@@ -139,7 +139,7 @@ jobs:
             curl -LsSf https://astral.sh/uv/install.sh | sh
           CIBW_BEFORE_BUILD_LINUX: >
             if [ "${PYCUDA_VERSION}" = "v2025.1.3" ]; then NUMPY_REQUIREMENT="numpy>=1.24,<2.3"; else NUMPY_REQUIREMENT="numpy>=1.24"; fi &&
-            uv pip install --break-system-packages setuptools wheel "${NUMPY_REQUIREMENT}" mako pytools &&
+            uv pip install --break-system-packages "build[uv]" setuptools wheel "${NUMPY_REQUIREMENT}" mako pytools &&
             bash build_scripts/prepare_for_build.sh ${{ steps.pycuda-version.outputs.version }}
           CIBW_ENVIRONMENT: >
             PYCUDA_VERSION=${{ steps.pycuda-version.outputs.version }}
