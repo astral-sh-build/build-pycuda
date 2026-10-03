@@ -11,7 +11,7 @@ import os
 from packaging.version import Version
 
 # Supported Python versions for pycuda.
-PYTHON_VERSIONS = ["3.9", "3.10", "3.11", "3.12", "3.13", "3.14"]
+PYTHON_VERSIONS = ["3.9", "3.10", "3.11", "3.12", "3.13", "3.14", "3.15"]
 
 # CUDA versions to build against.
 CUDA_VERSIONS = ["12.4", "12.6", "12.8", "12.9", "13.0", "13.2"]
