@@ -102,7 +102,7 @@ jobs:
       - name: Install uv
         uses: astral-sh/setup-uv@6b9c6063abd6010835644d4c2e1bef4cf5cd0fca # v6.0.1
         with:
-          version: "0.9.26"
+          version: "0.12.22"
           enable-cache: false
 
       - name: Set CUDA versions
@@ -113,6 +113,14 @@ jobs:
           echo "MANYLINUX_CUDA_COMPAT_VERSION=$(echo ${{ matrix.MANYLINUX_CUDA_COMPAT_VERSION }})" >> $GITHUB_ENV
           echo "MANYLINUX_GLIBC_VERSION=$(echo ${{ matrix.MANYLINUX_GLIBC_VERSION }})" >> $GITHUB_ENV
           echo "CI_AUDITWHEEL_EXCLUDES=$(echo ${{ matrix.CI_AUDITWHEEL_EXCLUDES }})" >> $GITHUB_ENV
+
+      - name: Provide Python 3.15 to the CUDA image
+        if: matrix.python-version == '3.15'
+        run: |
+          uv python install --install-dir "${RUNNER_TEMP}/pycuda-python" 3.15
+          pycuda_python=$(UV_PYTHON_INSTALL_DIR="${RUNNER_TEMP}/pycuda-python" uv python find --managed-python 3.15)
+          pycuda_python_prefix=$(dirname "$(dirname "${pycuda_python}")")
+          echo "CIBW_CONTAINER_ENGINE=docker; create_args: --volume ${pycuda_python_prefix}:/opt/python/cp315-cp315" >> "${GITHUB_ENV}"
 
       - name: Install cibuildwheel
         run: |
